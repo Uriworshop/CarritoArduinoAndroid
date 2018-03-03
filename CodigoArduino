@@ -1,0 +1,94 @@
+#include <SoftwareSerial.h>   // Incluimos la librería  SoftwareSerial  
+SoftwareSerial BT(10,11);    // Definimos los pines RX y TX del Arduino conectados al Bluetooth
+
+int M1 = A0;
+int M2 = A1;
+int M3 = A2;
+int M4 = A3;
+
+void setup()
+{
+  BT.begin(9600);       // Inicializamos el puerto serie BT (Para Modo AT 2)
+  Serial.begin(9600);   // Inicializamos  el puerto serie
+  pinMode(M1, OUTPUT);
+  pinMode(M2, OUTPUT);
+  pinMode(M3, OUTPUT);
+  pinMode(M4, OUTPUT);  
+}
+ 
+void loop()
+{
+  char c;
+  
+  if(BT.available())    // Si llega un dato por el puerto BT se envía al monitor serial
+  {
+    c = BT.read();
+    Serial.write(c);
+    if(c == '1')
+    {
+      Avanzar();
+    }
+    else if(c == '2')
+    {
+      Derecha();
+    }
+    else if(c == '3')
+    {
+      Atras();
+    }
+    else if(c == '4')
+    {
+      Izquierda();
+    }
+    else if(c == '5')
+    {
+      Detener();
+    }
+    //Serial.write(BT.read());
+  }
+  
+  /*if(Serial.available())  // Si llega un dato por el monitor serial se envía al puerto BT
+  {
+     BT.write(Serial.read());
+  }*/
+}
+
+void Detener()
+{
+  analogWrite(M1, 0);
+  analogWrite(M2, 0);
+  analogWrite(M3, 0);
+  analogWrite(M4, 0);
+} 
+
+void Atras()
+{
+  analogWrite(M1, 0);
+  analogWrite(M2, 255);
+  analogWrite(M3, 0);
+  analogWrite(M4, 255);
+} 
+
+void Avanzar()
+{
+  analogWrite(M1, 255);
+  analogWrite(M2, 0);
+  analogWrite(M3, 255);
+  analogWrite(M4, 0);
+} 
+
+void Izquierda()
+{
+  analogWrite(M1, 255);
+  analogWrite(M2, 0);
+  analogWrite(M3, 0);
+  analogWrite(M4, 255);
+}
+
+void Derecha()
+{
+  analogWrite(M1, 0);
+  analogWrite(M2, 255);
+  analogWrite(M3, 255);
+  analogWrite(M4, 0);
+} 
