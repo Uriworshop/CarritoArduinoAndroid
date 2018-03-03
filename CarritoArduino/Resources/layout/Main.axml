@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <Button
+        android:background="@drawable/fondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0.0dp" />
+    <ImageButton
+        android:background="@drawable/flechaizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnL"
+        android:layout_marginLeft="145.7dp"
+        android:layout_marginTop="105.0dp" />
+    <ImageButton
+        android:background="@drawable/flechaabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/btnD"
+        android:layout_marginLeft="250.0dp"
+        android:layout_marginTop="241.6dp" />
+    <ImageButton
+        android:background="@drawable/flechaarriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnU"
+        android:layout_marginLeft="250.0dp" />
+    <ImageButton
+        android:background="@drawable/flechaderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnR"
+        android:layout_marginLeft="389.4dp"
+        android:layout_marginTop="105.0dp" />
+    <ImageButton
+        android:background="@drawable/detener"
+        android:layout_width="72.0dp"
+        android:layout_height="73.7dp"
+        android:id="@+id/btnS"
+        android:layout_marginLeft="562.8dp"
+        android:layout_marginTop="254.3dp" />
+    <ImageButton
+        android:background="@drawable/bluetoothapagado"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/btnBP"
+        android:layout_marginLeft="32.7dp"
+        android:layout_marginTop="223.0dp" />
+</RelativeLayout>
